@@ -15,7 +15,7 @@ const startApp = async () => {
 
     server.route({
       method: 'GET',
-      path: '/',
+      path: '/ping',
       handler: (request, h) => {
         return 'Ping!';
       }
