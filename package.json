@@ -1,0 +1,22 @@
+{
+  "name": "sor-bot",
+  "version": "1.0.0",
+  "description": "Gives information on the state of ORvR on the Return of Reckoning Private Server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "Alex Cauthen",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^19.1.1",
+    "discord.js": "^12.2.0",
+    "pm2": "^4.4.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

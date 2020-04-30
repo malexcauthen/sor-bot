@@ -1,0 +1,68 @@
+[
+  { "name": "High Elves v Dark Elves", "owner": "Destruction", "pairing": 3 },
+  { "name": "Empire v Chaos", "owner": "Destruction", "pairing": 2 },
+  {
+    "name": "Stonewatch",
+    "pop1": "240",
+    "pop2": "192",
+    "Owner": "Order",
+    "stage": "4",
+    "health": "99%"
+  }
+]
+
+[{ "name": "Altdorf", "Owner": "Order" },
+  { "name": "Dwarfs v Greenskins", "owner": "Destruction", "pairing": 1 },
+  { "name": "Empire v Chaos", "owner": "Destruction", "pairing": 2 },
+  { "name": "High Elves v Dark Elves", "owner": "Destruction", "pairing": 3 }]
+    
+    {
+      "aao": "0",
+      "bos": ["Order", "Destruction", "Neutral", "Order"],
+      "name": "Reikland",
+      "pop1": "95",
+      "pop2": "108",
+      "tier": 4,
+      "keep1": {
+        "obj": "Safe",
+        "rank": "2",
+        "owner": "Destruction",
+        "status": "Safe"
+      },
+      "keep2": { "obj": "Safe", "rank": "2", "owner": "Order", "status": "Safe" },
+      "aaoOwner": "Neutral"
+    },
+    {
+      "aao": "20",
+      "bos": ["Destruction", "Destruction", "Neutral", "Destruction"],
+      "name": "Dragonwake",
+      "pop1": "279",
+      "pop2": "207",
+      "tier": 4,
+      "keep1": { "obj": "Safe", "rank": "2", "owner": "Order", "status": "Safe" },
+      "keep2": {
+        "obj": "5",
+        "rank": "1",
+        "owner": "Destruction",
+        "status": "Outer"
+      },
+      "aaoOwner": "Destruction"
+    },
+    {
+      "aao": "0",
+      "bos": ["Neutral", "Order", "Neutral", "Destruction"],
+      "name": "Black Crag",
+      "pop1": "7",
+      "pop2": "6",
+      "tier": 4,
+      "keep1": {
+        "obj": "Safe",
+        "rank": "2",
+        "owner": "Destruction",
+        "status": "Safe"
+      },
+      "keep2": { "obj": "Safe", "rank": "0", "owner": "Order", "status": "Safe" },
+      "aaoOwner": "Neutral"
+    }
+  ]
+  
