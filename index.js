@@ -2,6 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const { Client } = require('discord.js');
+const { token } = require('./secrets.json');
 
 const client = new Client();
 const commands = require('./commands');
@@ -39,6 +40,6 @@ client.on('message', (message) => {
   } catch (error) {}
 });
 
-client.login(process.env.BOT_TOKEN || require('./secrets.json').token);
+client.login(require('./secrets.json').token);
 
 startApp();

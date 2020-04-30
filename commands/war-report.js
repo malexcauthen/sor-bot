@@ -4,6 +4,7 @@ const { MessageEmbed } = require('discord.js');
 const Request = require('request-promise');
 
 const { sor, sorApi } = require('../config.json');
+const { apiKey } = require('../secrets.json');
 const Cities = require('../ror/cities');
 const Forts = require('../ror/forts');
 const Pairing = require('../ror/pairing-lock');
@@ -14,7 +15,7 @@ module.exports = {
     'Returns the State of The Realm War Report. Gives information on where the campaign has progressed to.',
   execute: (message, args = null) => {
     Request.post(sorApi, {
-      form: { api: process.env.API_KEY || require('../secrets.json').apiKey }
+      form: { api: apiKey }
     })
       .then((resp) => {
         console.log(resp);
