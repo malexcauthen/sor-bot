@@ -8,7 +8,7 @@ const commands = require('./commands');
 
 const startApp = async () => {
   const server = Hapi.Server({
-    port: process.env.PORT || 3000
+    port: 8080
   });
 
   server.route({
