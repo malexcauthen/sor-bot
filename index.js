@@ -8,20 +8,26 @@ const client = new Client();
 const commands = require('./commands');
 
 const startApp = async () => {
-  const server = Hapi.Server({
-    port: 8080
-  });
+  try {
+    const server = Hapi.Server({
+      port: 8080
+    });
 
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: (request, h) => {
-      return 'Ping!';
-    }
-  });
+    server.route({
+      method: 'GET',
+      path: '/',
+      handler: (request, h) => {
+        return 'Ping!';
+      }
+    });
 
-  await server.start();
-  console.log('Server running on %s', server.info.uri);
+    await server.start();
+    console.log('Server running on %s', server.info.uri);
+
+    client.login(require('./secrets.json').token);
+  } catch (error) {
+    console.log(JSON.stringify(error));
+  }
 };
 
 client.once('ready', () => {
@@ -39,7 +45,5 @@ client.on('message', (message) => {
     commands[cmd].execute(message, args);
   } catch (error) {}
 });
-
-client.login(require('./secrets.json').token);
 
 startApp();
