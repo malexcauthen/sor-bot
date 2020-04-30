@@ -11,6 +11,14 @@ const startApp = async () => {
     port: process.env.PORT || 3000
   });
 
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: (request, h) => {
+      return 'Ping!';
+    }
+  });
+
   await server.start();
   console.log('Server running on %s', server.info.uri);
 };
