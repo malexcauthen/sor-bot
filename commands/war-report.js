@@ -18,7 +18,6 @@ module.exports = {
       form: { api: apiKey }
     })
       .then((resp) => {
-        console.log(resp);
         return parseResponse(resp);
       })
       .then((data) => {
@@ -28,7 +27,7 @@ module.exports = {
         return sendReports(message, reports);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(JSON.stringify(error));
       });
   }
 };
