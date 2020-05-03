@@ -1,15 +1,25 @@
-[
-  { "name": "High Elves v Dark Elves", "owner": "Destruction", "pairing": 3 },
-  { "name": "Empire v Chaos", "owner": "Destruction", "pairing": 2 },
-  {
+
+  {"forts": [{
     "name": "Stonewatch",
     "pop1": "240",
     "pop2": "192",
     "Owner": "Order",
     "stage": "4",
     "health": "99%"
-  }
-]
+  }]}
+
+{
+  "cities": [
+    {
+      "name": "Altdorf", "Owner": "Order" 
+    }
+  ],
+  "zonelocks": [
+    { "name": "Dwarfs v Greenskins", "owner": "Destruction", "pairing": 1 },
+  { "name": "Empire v Chaos", "owner": "Destruction", "pairing": 2 },
+  ]
+}
+
 
 [{ "name": "Altdorf", "Owner": "Order" },
   { "name": "Dwarfs v Greenskins", "owner": "Destruction", "pairing": 1 },
