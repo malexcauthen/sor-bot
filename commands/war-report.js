@@ -1,34 +1,24 @@
 'use strict';
 
 const { MessageEmbed } = require('discord.js');
-const Request = require('request-promise');
 
-const { sor, sorApi } = require('../config.json');
-const { apiKey } = require('../secrets.json');
-const Cities = require('../ror/cities');
+const { getSORData } = require('../utils');
+const { sor } = require('../config.json');
 const Forts = require('../ror/forts');
-const Pairing = require('../ror/pairing-lock');
 
 module.exports = {
   name: 'warreport',
   description:
     'Returns the State of The Realm War Report. Gives information on where the campaign has progressed to.',
-  execute: (message, args = null) => {
-    Request.post(sorApi, {
-      form: { api: apiKey }
-    })
-      .then((resp) => {
-        return parseResponse(resp);
-      })
-      .then((data) => {
-        return createEmbedReports(data);
-      })
-      .then((reports) => {
-        return sendReports(message, reports);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  execute: async (message, args = null) => {
+    try {
+      const response = await getSORData();
+      const data = parseResponse(response);
+      const reports = createEmbedReports(data);
+      return sendReports(message, reports);
+    } catch (error) {
+      console.log(error);
+    }
   }
 };
 
